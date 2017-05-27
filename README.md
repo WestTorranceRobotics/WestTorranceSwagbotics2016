@@ -1,3 +1,3 @@
 # WestTorranceSwagbotics2016
 
-2016 frc code for FRC Stronghold
+2016 FRC code for FRC Stronghold
