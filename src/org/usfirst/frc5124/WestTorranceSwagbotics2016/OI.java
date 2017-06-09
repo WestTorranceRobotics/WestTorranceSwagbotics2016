@@ -34,7 +34,7 @@ public class OI {
     	driver = new Joystick(0);				// Initialize joysticks to their ports			
         operator = new Joystick(1);
         autoSelector = new Joystick(2);
-        
+        /*
         exhaust = new JoystickButton(operator, 5);		// initialize buttons to their joysticks, buttons
         exhaust.whileHeld(new IntakeExhaust());			// tell the button what to do
         takeIn = new JoystickButton(operator, 4);		// do that over and over again
@@ -69,7 +69,7 @@ public class OI {
         SmartDashboard.putData("Calibrate", new Calibrategyro());
         SmartDashboard.putData("Cross", new CrossPorteCullis());
         SmartDashboard.putBoolean("On Target", Robot.driveTrain.onTarget());
-        
+        */
         
     }
 

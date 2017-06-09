@@ -10,10 +10,6 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-
-/**
- *
- */
 public class DriveTrain extends PIDSubsystem {
 
     public DriveTrain() {

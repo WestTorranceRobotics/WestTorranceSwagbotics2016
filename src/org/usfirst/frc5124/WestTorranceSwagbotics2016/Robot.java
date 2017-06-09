@@ -154,7 +154,7 @@ public class Robot extends IterativeRobot {
         } else if(onesPlaceSwitch.get() && !tensPlaceSwitch.get()) {
         	autonomousCommand = new CrossChevalDeFrise();
         }*/
-    	
+    	/*
     	if(oi.getAutoSelector().getRawButton(1)) {		// set auto using auto selector
         	if(oi.getAutoSelector().getRawButton(5) && !oi.getAutoSelector().getRawButton(2) && !oi.getAutoSelector().getRawButton(3)) {
         		autonomousCommand = new GeneralDefenseAuto();
@@ -175,33 +175,34 @@ public class Robot extends IterativeRobot {
         	autonomousCommand = new DoNothingAuto();
         }
     	
-    	if (autonomousCommand != null) autonomousCommand.start();
+    	if (autonomousCommand != null) autonomousCommand.start();*/
     	
-        RobotMap.driveTrainRobotDrive.setMaxOutput(1);		// full speed ahead
+        RobotMap.driveTrainRobotDrive.setMaxOutput(0.6);		// full speed ahead
     }
 
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
         //SmartDashboard.putNumber("Encoder", encoderDriveTrain.getEncoder());
         SmartDashboard.putNumber("Encoder Distance", encoderDriveTrain.getEncoderDistance());
-        camera.getReportValues();		// THIS IS IMPORTANT WITHOUT THIS THE CAMERA SUBSYSTEM WITLL NOT GET VISON DATA 
+        //camera.getReportValues();		// THIS IS IMPORTANT WITHOUT THIS THE CAMERA SUBSYSTEM WITLL NOT GET VISON DATA 
     }
 
     public void teleopInit() {
         if (autonomousCommand != null) autonomousCommand.cancel();
         encoderDriveTrain.resetEncoder();
-        Robot.intake.setSetpoint(4.8);
-        Robot.intake.enable();
+        //Robot.intake.setSetpoint(4.8);
+        //Robot.intake.enable();
         //Robot.intake.disable();
+        Robot.catapult.setCatapultBooleanDown();
     }
 
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
 
-        RobotMap.driveTrainRobotDrive.setMaxOutput(0.7);
+        RobotMap.driveTrainRobotDrive.setMaxOutput(1);
         
         
-        camera.getReportValues();		// THIS IS IMPORTANT WITHOUT THIS THE CAMERA SUBSYSTEM WITLL NOT GET VISON DATA 
+        //camera.getReportValues();		// THIS IS IMPORTANT WITHOUT THIS THE CAMERA SUBSYSTEM WITLL NOT GET VISON DATA 
         
         //SmartDashboard.putNumber("Pot", intake.getPot());
     }

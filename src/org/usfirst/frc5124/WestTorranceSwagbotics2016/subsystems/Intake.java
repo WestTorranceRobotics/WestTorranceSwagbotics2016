@@ -1,16 +1,11 @@
 package org.usfirst.frc5124.WestTorranceSwagbotics2016.subsystems;
 
 import org.usfirst.frc5124.WestTorranceSwagbotics2016.RobotMap;
-import com.ctre.CANTalon;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
-import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-
-/**
- *
- */
 public class Intake extends PIDSubsystem {
 	
 	public static boolean intakeIsDown = true;
@@ -23,8 +18,8 @@ public class Intake extends PIDSubsystem {
         LiveWindow.addActuator("Intake", "PIDSubsystem Controller", getPIDController());
 	}
 
-	private final CANTalon intakePositioner = RobotMap.intakeIntakePositioner;
-    private final SpeedController intakeMotor = RobotMap.intakeIntakeMotor;
+	private final Spark intakePositioner = RobotMap.intakeIntakePositioner;
+    private final Spark intakeMotor = RobotMap.intakeIntakeMotor;
     private final AnalogPotentiometer pot = RobotMap.pot;
     
     
