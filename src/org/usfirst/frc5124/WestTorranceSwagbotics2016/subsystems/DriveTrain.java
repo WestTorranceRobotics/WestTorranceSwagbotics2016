@@ -25,6 +25,7 @@ public class DriveTrain extends PIDSubsystem {
     private final RobotDrive robotDrive = RobotMap.driveTrainRobotDrive;
     private final Compressor compressor = RobotMap.driveTrainCompressor;
 	private final ADXRS450_Gyro gyro = RobotMap.gyro;
+	
 
     protected double returnPIDInput() {
         
@@ -54,7 +55,13 @@ public class DriveTrain extends PIDSubsystem {
     	robotDrive.arcadeDrive(joy);
     }
     
-    public void startCompressor() {
+    public void compressorOff() {													/* Turn off the compressor */
+    	compressor.setClosedLoopControl(false);
+    	compressor.stop();
+    }
+    
+    public void compressorOn() {													/* Turn on the compressor */
+    	compressor.setClosedLoopControl(true);
     	compressor.start();
     }
     

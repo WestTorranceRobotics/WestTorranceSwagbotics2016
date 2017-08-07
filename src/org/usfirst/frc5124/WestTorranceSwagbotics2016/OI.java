@@ -34,19 +34,19 @@ public class OI {
     	driver = new Joystick(0);				// Initialize joysticks to their ports			
         operator = new Joystick(1);
         autoSelector = new Joystick(2);
-        /*
+        
         exhaust = new JoystickButton(operator, 5);		// initialize buttons to their joysticks, buttons
         exhaust.whileHeld(new IntakeExhaust());			// tell the button what to do
         takeIn = new JoystickButton(operator, 4);		// do that over and over again
         takeIn.whileHeld(new IntakeIntake());
-        load = new JoystickButton(operator, 2);
-        load.whenPressed(new CatapultLoad());
-        launch = new JoystickButton(driver, 7);
-        launch.whenPressed(new FullShot());
-        lineUp = new JoystickButton(driver, 8);
-        lineUp.whileHeld(new LineUp());   
-        stutter = new JoystickButton(driver, 1);
-        stutter.whenPressed(new StutterShot());     
+        //load = new JoystickButton(operator, 2);
+        //load.whenPressed(new CatapultLoad());
+        //launch = new JoystickButton(driver, 7);
+        //launch.whenPressed(new FullShot());
+        //lineUp = new JoystickButton(driver, 8);
+        //lineUp.whileHeld(new LineUp());   
+        //stutter = new JoystickButton(driver, 1);
+        //stutter.whenPressed(new StutterShot());     
         intakeUp = new JoystickButton(operator, 9);
         intakeUp.whenPressed(new IntakeRetract());
         intakeDown = new JoystickButton(operator, 8);
@@ -62,7 +62,7 @@ public class OI {
         upShoot = new JoystickButton(operator, 6);
         upShoot.whenPressed(new IntakeFullUp());
         
-        
+        /*
         SmartDashboard.putData(new CatapultLaunch());				// Smartdashboard stuff, mostly for testing
         SmartDashboard.putData("Right", new TurnPID(90));			// the testing stuff should be gone for comps :c
         SmartDashboard.putData("Left", new TurnPID(-90));

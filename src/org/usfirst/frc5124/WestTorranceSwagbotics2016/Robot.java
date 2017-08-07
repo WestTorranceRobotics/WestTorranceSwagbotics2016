@@ -52,10 +52,7 @@ public class Robot extends IterativeRobot {
         camera = new Camera();
         encoderDriveTrain = new EncoderDriveTrain();
         pidHandler = new PIDHandler();
-        // OI must be constructed after subsystems. If the OI creates Commands		// auto generated comment lol
-        //(which it very likely will), subsystems are not guaranteed to be
-        // constructed yet. Thus, their requires() statements may grab null
-        // pointers. Bad news. Don't move it.
+        
         oi = new OI();
         autonomousCommand = new DoNothingAuto();  
         convexReport = NetworkTable.getTable("GRIP/convexHullReport");		// initialize the network table
@@ -192,7 +189,7 @@ public class Robot extends IterativeRobot {
         encoderDriveTrain.resetEncoder();
         //Robot.intake.setSetpoint(4.8);
         //Robot.intake.enable();
-        //Robot.intake.disable();
+        Robot.intake.disable();
         Robot.catapult.setCatapultBooleanDown();
     }
 
